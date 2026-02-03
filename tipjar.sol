@@ -24,4 +24,26 @@ return address(this).balance;
 
 }
 
+
+// 3.1 Structure for a Waitress
+
+struct Waitress {
+
+address payable walletAddress;
+
+string name;
+
+uint percent;
+
+}
+
+Waitress[] waitress; // List of all waitresses
+
+// 5. View waitress
+
+function viewWaitress() public view returns(Waitress[] memory) {
+
+return waitress;
+
+}
 }

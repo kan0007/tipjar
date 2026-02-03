@@ -1,0 +1,71 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "addtips",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "viewtips",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"tipjar.sol": "tips"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"tipjar.sol": {
+			"keccak256": "0x2fca33c0d3aef5b64e0bdef548d2706703fad750a01a9053ea40c0476fb82316",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://821addda8540aa340171459e33c5e5e24f61053f79968946620b12af363a0f07",
+				"dweb:/ipfs/QmZJzxYshQ11DgK3Z3GxfxZMk7TGzqeWzcC44UxnpSbAvT"
+			]
+		}
+	},
+	"version": 1
+}

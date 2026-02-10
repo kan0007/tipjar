@@ -11,6 +11,29 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "walletAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "percent",
+						"type": "uint256"
+					}
+				],
+				"name": "addWaitress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "addtips",
 				"outputs": [],
@@ -89,11 +112,11 @@
 	},
 	"sources": {
 		"tipjar.sol": {
-			"keccak256": "0x1adb44a32e6b343e3b8b6735c40a527bf68996d31120d7d12fa1c2d72eb55388",
+			"keccak256": "0x4a43b312154c16ddb113d9fdf5a47c53071744842db33d309f1413f745504831",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://24eb1c8f57ca826f8bd79e754ee7540713ba75ab49d903335b0ed484ee9fe025",
-				"dweb:/ipfs/QmT7hTcaSqr7ExzAochGmr9FVXh3QED8WShgzZKxhh8H7g"
+				"bzz-raw://51237699bbf11cb6cf1d4add93c4a7196472f344c700a96d695fe2b6824e9d3f",
+				"dweb:/ipfs/QmQwKewBT4PY5ccaf7qEfxjHZULs1ogZ1LajWSGnht3cwV"
 			]
 		}
 	},

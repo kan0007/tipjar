@@ -3,47 +3,76 @@
 pragma solidity 0.8.31;
 
 contract tips {
+    address owner;
 
-address owner;
+    constructor() {
+        owner = msg.sender;
+    }
 
-constructor() {
+    // 1. Put fund in smart contract
 
-owner = msg.sender;
+    function addtips() public payable {}
 
-}
+    // 2. View balance
 
-// 1. Put fund in smart contract
+    function viewtips() public view returns (uint) {
+        return address(this).balance;
+    }
 
-function addtips() payable public {}
+    // 3.1 Structure for a Waitress
 
-// 2. View balance
+    struct Waitress {
+        address payable walletAddress;
+        string name;
+        uint percent;
+    }
 
-function viewtips() public view returns(uint) {
+    Waitress[] waitress; // List of all waitresses
 
-return address(this).balance;
+    // 5. View waitress
 
-}
+    function viewWaitress() public view returns (Waitress[] memory) {
+        return waitress;
+    }
 
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only owner can call");
 
-// 3.1 Structure for a Waitress
+        _;
+    }
 
-struct Waitress {
+    function addWaitress(
+        address payable walletAddress,
+        string memory name,
+        uint percent
+    ) public onlyOwner {
+        bool waitressExist = false;
 
-address payable walletAddress;
+        for (uint i = 0; i < waitress.length; i++) {
+            if (waitress[i].walletAddress == walletAddress) {
+                waitressExist = true;
+            }
+        }
+        if (waitressExist == false) {
+            waitress.push(Waitress(walletAddress, name, percent));
+        }
+    }
 
-string name;
+    function removeWaitress(address walletAddress) public onlyOwner {
+        if (waitress.length >= 1) {
+            for (uint i = 0; i < waitress.length; i++) {
+                if (waitress[i].walletAddress == walletAddress) {
+                    // Shift elements left
 
-uint percent;
+                    for (uint j = i; j < waitress.length - 1; j++) {
+                        waitress[j] = waitress[j + 1];
+                    }
 
-}
+                    waitress.pop();
 
-Waitress[] waitress; // List of all waitresses
-
-// 5. View waitress
-
-function viewWaitress() public view returns(Waitress[] memory) {
-
-return waitress;
-
-}
+                    break;
+                }
+            }
+        }
+    }
 }
